@@ -1,19 +1,18 @@
-# Peer-to-peer community sharing
+# Peer-to-peer resource sharing
 
 Code for paper "Untapped Capacity of Place-based Peer-to-Peer (P2P) Resource Sharing for Community Resilience" by Zhengyang Li, Katherine Idziorek, Anthony Chen, Cynthia Chen.
  
 ## Requirements
 - Python 3.x.
 - Common libraries such as numpy, pandas, matplotlib, scipy, etc.
-- folium (for visualization)
-- Gurobi (for optimization)
-- Networkx (for network analysis)
+- Gurobi 10.0.2 (for optimization)
+- Networkx 3.1 (for network analysis)
 
 ## Installation guide
-- Clone this repo.
+Clone this repo.
 
 ## Demo
-See the Demo folder for the demo code and expected output.
+See the `Demo` folder for the demo code and the expected output.
 
 ## File organization
 - `data`: The derived data used in this project.
@@ -21,8 +20,8 @@ See the Demo folder for the demo code and expected output.
     - `community.py`: The code for generating community-based social networks and P2P resource-sharing networks.
     - `resource_sharing_model.py`: The resource shairng model.
     - `evaluation_metrics.py`: The evaluation metrics for resilience loss.
-- `test`: The test code of this project.
 - `results`: The scenario analysis results.
+- `demo`: The demo code and expected output.
 - `figs`: The figures generated in this project.
 
 ## Framework
@@ -30,19 +29,12 @@ The framework of this repo is shown as below. The modules and workflows are show
 
 ![Alt text](figs/methodology_framework.png)
 
-### Preprocessing: Process the community address data and community survey data.
-- The households in the Laurelhurst community.
-<img src="data/laurelhurst_address.png" width="70%">
-
-- The households in the Southpark community.
-<img src="data/southpark_address.png" width="70%">
-
 ### Coomunity-based social network
 
-- Calibrate degree distribution. The details are shown in [laurelhurst_degree_distribution.ipynb](laurelhurst_degree_distribution.ipynb). The calibrated degree distribution is shown as below.
-![Alt text](figs/laurelhurst_power_law_fit.png)
+- Calibrate degree distribution. The calibrated degree distribution is shown as below.
+<img src="figs/laurelhurst_negative_binomial_fit.png"  width="70%">
 - For the southpark community, the degree distribution is shown as below.
-![Alt text](figs/southpark_power_law_fit.png)
+<img src="figs/southpark_negative_binomial_fit.png"  width="70%">
 
 - Calibrate distance decay function. The details are shown in [distance_decay_function.ipynb](distance_decay_function.ipynb). The calibrated distance decay function is shown as below.
 <img src="figs/laurelhurst_distance_decay_function.png"  width="50%">
