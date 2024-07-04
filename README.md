@@ -9,6 +9,12 @@ Code for paper "Untapped Capacity of Place-based Peer-to-Peer (P2P) Resource Sha
 - Gurobi (for optimization)
 - Networkx (for network analysis)
 
+## Installation guide
+- Clone this repo.
+
+## Demo
+See the Demo folder for the demo code and expected output.
+
 ## File organization
 - `data`: The derived data used in this project.
 - `src`: The source code of this project.
