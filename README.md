@@ -1,23 +1,22 @@
 # Peer-to-peer community sharing
+
+Code for paper "Untapped Capacity of Place-based Peer-to-Peer (P2P) Resource Sharing for Community Resilience" by Zhengyang Li, Katherine Idziorek, Anthony Chen, Cynthia Chen.
  
-## Requirement
+## Requirements
 - Python 3.x.
 - Common libraries such as numpy, pandas, matplotlib, scipy, etc.
 - folium (for visualization)
+- Gurobi (for optimization)
+- Networkx (for network analysis)
 
 ## File organization
-- `RawData`: The row data used in this project.
-    - `address`: The address data of the Laurelhurst and Southpark communities.
-    - `survey`: The survey data of the Laurelhurst and Southpark communities.
 - `data`: The derived data used in this project.
-    - `preprocessing`: The processed data of the Laurelhurst and Southpark communities.
-- `calibration`: The calibration results.
 - `src`: The source code of this project.
-    - `network.py`: The code for general networks.
-    - `social_network.py`: The code to generate the social network.
-    - `resource_sharing_network.py`: The code to generate the resource-sharing network.
+    - `community.py`: The code for generating community-based social networks and P2P resource-sharing networks.
+    - `resource_sharing_model.py`: The resource shairng model.
+    - `evaluation_metrics.py`: The evaluation metrics for resilience loss.
 - `test`: The test code of this project.
-- `scenarios`: The scenario analysis results.
+- `results`: The scenario analysis results.
 - `figs`: The figures generated in this project.
 
 ## Framework
