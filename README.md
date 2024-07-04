@@ -31,16 +31,22 @@ The framework of this repo is shown as below. The modules and workflows are show
 
 ### Coomunity-based social network
 
-- Calibrate degree distribution. The calibrated degree distribution is shown as below.
-<img src="figs/laurelhurst_negative_binomial_fit.png"  width="70%">
-- For the southpark community, the degree distribution is shown as below.
-<img src="figs/southpark_negative_binomial_fit.png"  width="70%">
+Degree distribution.
+- Laurelhurst.
+<img src="figs/laurelhurst_negative_binomial_fit.png"  width="50%">
+- South Park
+<img src="figs/southpark_negative_binomial_fit.png"  width="50%">
 
-- Calibrate distance decay function. The details are shown in [distance_decay_function.ipynb](distance_decay_function.ipynb). The calibrated distance decay function is shown as below.
+Distance decay function. 
+- Laurelhurst.
 <img src="figs/laurelhurst_distance_decay_function.png"  width="50%">
+- South Park.
+<img src="figs/southpark_distance_decay_function.png"  width="50%">
 
-- The final product looks like:
+An example of the generated social network.
+- Laurelhurst.
 <img src="figs/laurelhurst_social_tie_net.png"  width="70%">
+- South Park.
 <img src="figs/southpark_social_tie_net.png"  width="70%">
 
 ### Community-based resource-sharing network
