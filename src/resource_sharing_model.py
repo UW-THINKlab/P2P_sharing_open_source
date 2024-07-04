@@ -6,7 +6,6 @@
 import numpy as np
 import gurobipy as gp
 from gurobipy import GRB
-from scipy.optimize import linprog
 
 """
 step 1: specify the input and output of the model.
@@ -109,42 +108,6 @@ class ResourceSharingModel:
         # m.write('test.lp')
         m.optimize()
         self.share_plan = x.X
-
-    # def resource_sharing_model(self):
-    #     """
-    #     Method:
-    #         Given the willingness-to-share matrix, the extra resource vector, and the needed resource vector, 
-    #         calculate the resource sharing plan.
-    #     Parameters:
-    #         wts_matrix: the willingness-to-share matrix.
-    #         extra_resource: the extra resource vector.
-    #         needed_resource: the needed resource vector.
-    #     """
-    #     n = np.shape(self.wts_matrix)[0]
-    #     # step 2: define the objective function
-    #     c = np.zeros(n*n)
-    #     for i in range(n):
-    #         for j in range(n):
-    #             c[i*n+j] = self.wts_matrix[i][j]
-    #     # step 3: define the constraints (sum of each row <= extra_resource, sum of each column <= needed_resource)
-    #     A1 = np.zeros((n, n*n)) # sum of each row <= extra_resource
-    #     for i in range(n):
-    #         for j in range(n):
-    #             A1[i][i*n+j] = 1
-    #     A2 = np.zeros((n, n*n)) # sum of each column <= needed_resource
-    #     for i in range(n):
-    #         for j in range(n):
-    #             A2[i][j*n+i] = 1
-    #     A = np.vstack((A1, A2))
-    #     b = np.vstack((self.extra_resource, self.needed_resource))
-    #     # step 4: solve the linear programming problem
-    #     sol = linprog(-c, A_ub=A, b_ub=b, bounds=(0, None))
-    #     # step 5: post-processing
-    #     plan = np.zeros((n, n))
-    #     for i in range(n):
-    #         for j in range(n):
-    #             plan[i][j] = sol.x[i*n+j]
-    #     self.share_plan = plan
     
     def solve(self):
         """

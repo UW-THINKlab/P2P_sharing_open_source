@@ -50,41 +50,6 @@ def get_expected_survival_curve(scenario_survival_curves: np.array) -> np.array:
         expected_survival_curve[i] = np.mean(scenario_survival_curves[:, i])
     return expected_survival_curve
 
-def get_quantile_survival_curve(scenario_survival_curves: np.array, quantile: float):
-    """
-    Method:
-        Given the scenario survival curves, calculate the quantile survival curve.
-    Parameters:
-        scenario_survival_curves: np.array. row is the scenario, column is the time stamp.
-            The scenario survival curves.
-        quantile: float
-            The quantile.
-    Returns:
-        quantile_survival_curve: np.array
-    """
-    quantile_survival_curve = np.zeros(scenario_survival_curves.shape[1])
-    for i in range(0, scenario_survival_curves.shape[1]):
-        quantile_survival_curve[i] = np.quantile(scenario_survival_curves[:, i], quantile)
-    return quantile_survival_curve
-
-def get_superquantile_survival_curve(scenario_survival_curves: np.array, quantile: float):
-    """
-    Method:
-        Given the scenario survival curves, calculate the superquantile survival curve.
-    Parameters:
-        scenario_survival_curves: np.array. row is the scenario, column is the time stamp.
-            The scenario survival curves.
-        superquantile: float
-            The superquantile.
-    Returns:
-        superquantile_survival_curve: np.array
-    """
-    superquantile_survival_curve = np.zeros(scenario_survival_curves.shape[1])
-    for i in range(0, scenario_survival_curves.shape[1]):
-        quantile_survival_curve = np.quantile(scenario_survival_curves[:, i], quantile)
-        superquantile_survival_curve[i] = np.mean(scenario_survival_curves[:, i] >= quantile_survival_curve)
-    return superquantile_survival_curve
-
 def get_resilience(x:list, y:list):
     """
     Method:
