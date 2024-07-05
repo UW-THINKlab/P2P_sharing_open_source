@@ -11,9 +11,6 @@ Code for paper "Untapped Capacity of Place-based Peer-to-Peer (P2P) Resource Sha
 ## Installation guide
 Clone this repo. How to do this? Check this [link.](https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository)
 
-## Demo
-See the `Demo` folder for the demo code and the expected output.
-
 ## File organization
 - `data`: The derived data used in this project.
 - `src`: The source code of this project.
@@ -26,6 +23,9 @@ See the `Demo` folder for the demo code and the expected output.
     - `v_vec`: The resource demand of households after P2P resource sharing.
 - `results`: The scenario analysis results.
 - `figs`: The figures generated in this project.
+
+## Demo
+See the `Demo` folder for the demo code and the expected output.
 
 ## Framework
 The framework of this the place-based P2P resource sharing is shown as below. For more details, please refer to the paper.
