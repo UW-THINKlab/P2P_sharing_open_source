@@ -9,7 +9,7 @@ Code for paper "Untapped Capacity of Place-based Peer-to-Peer (P2P) Resource Sha
 - Networkx 3.1 (for network analysis)
 
 ## Installation guide
-Clone this repo.
+Clone this repo. How to do this? Check this [link.](https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository)
 
 ## Demo
 See the `Demo` folder for the demo code and the expected output.
@@ -18,18 +18,24 @@ See the `Demo` folder for the demo code and the expected output.
 - `data`: The derived data used in this project.
 - `src`: The source code of this project.
     - `community.py`: The code for generating community-based social networks and P2P resource-sharing networks.
-    - `resource_sharing_model.py`: The resource shairng model.
+    - `resource_sharing_model.py`: The P2P resource-shairng model.
     - `evaluation_metrics.py`: The evaluation metrics for resilience loss.
 - `results`: The scenario analysis results.
 - `demo`: The demo code and expected output.
 - `figs`: The figures generated in this project.
 
 ## Framework
-The framework of this repo is shown as below. The modules and workflows are shown in the following sections.
+The framework of this the place-based P2P resource sharing is shown as below. For more details, please refer to the paper.
 
 ![Alt text](figs/methodology_framework.png)
 
-### Coomunity-based social network
+### Place-based social network
+
+This module requires the following data:
+- Degree distribution.
+- Distance decay function.
+- Household-to-household distance.
+- The proportion of strong and weak ties in the community.
 
 Degree distribution.
 - Laurelhurst.
@@ -43,26 +49,33 @@ Distance decay function.
 - South Park.
 <img src="figs/southpark_distance_decay_function.png"  width="50%">
 
-An example of the generated social network.
+Household-to-household distance.
+- data/laurelhurst_distance_matrix.npy
+- data/southpark_distance_matrix.npy
+
+The proportion of strong and weak ties in the community.
+- Laurelhurst: strong ties 0.41296, weak ties 0.58704.
+- South Park: strong ties 0.298, weak ties 0.702.
+
+Using the proposed procedure, an example of the generated social network is shown as below.
 - Laurelhurst.
 <img src="figs/laurelhurst_social_tie_net.png"  width="70%">
 - South Park.
 <img src="figs/southpark_social_tie_net.png"  width="70%">
 
-### Community-based resource-sharing network
+### Place-based resource-sharing network
 
-- Willingness-to-share. See [willingness_to_share.ipynb](willingness_to_share.ipynb). The calibrated willingness-to-share is shown as below.
-<img src="figs/laurelhurst_willingness_to_share.png"  width="50%">
+This module requires the following data:
+- Resource distribution. See [data/laurelhurst_resource_distr_PMF.csv](data/laurelhurst_resource_distr_PMF.csv) and [data/southpark_resource_distr_PMF.csv](data/southpark_resource_distr_PMF.csv).
+- Sharing preferece. See [data/laurelhurst_share_pref_PMF.csv](data/laurelhurst_share_pref_PMF.csv) and [data/southpark_share_pref_PMF.csv](data/southpark_share_pref_PMF.csv).
+- Sharing priority. 
 
-- Generating social network and its attributes. [generate_social_network.py](scr/generate_social_network.py)
+For strong ties, the sharing priority is 3; for weak ties, the sharing priority is 2; for strangers, the sharing priority is 1.
 
-- Resource distribution. See [laurelhurst_resource_distribution.ipynb](laurelhurst_resource_distribution.ipynb).
-<img src="figs/laurelhurst_transp_resource_dist.png"  width="50%">
+### P2P Resource-sharing Model
 
-- Resource distribution in the Southpark community. See [southpark_resource_distribution.ipynb](southpark_resource_distribution.ipynb).
-<img src="figs/southpark_transp_resource_dist.png"  width="50%">
+This module redistribute the surplus resources to the needy households based on the sharing preference and sharing priority. Here blow is an example of the resource-sharing model.
 
-### Resource-sharing model
 - Resource sharing model. [resource_sharing_model.py](src/resource_sharing_model.py)
 
 - Before sharing.
@@ -72,4 +85,12 @@ An example of the generated social network.
 <img src="figs/laurelhurst_transp_resource_redistribution.png"  width="70%">
 
 ### Evaluation matrics
-- See [evaluation_metrics.py](src/evaluation_metrics.py)
+See [evaluation_metrics.py](src/evaluation_metrics.py). This module calculates the resilience loss of the community after the disaster. Here is an example of the evaluation metrics.
+
+<img src="figs/laurelhurst_status_quo_tau_5_water.png"  width="70%">
+
+## Citation
+
+If you find this code useful in your research, please consider citing:
+
+"Untapped Capacity of Place-based Peer-to-Peer (P2P) Resource Sharing for Community Resilience" by Zhengyang Li, Katherine Idziorek, Anthony Chen, Cynthia Chen.
