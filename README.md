@@ -32,7 +32,7 @@ The framework of this the place-based P2P resource sharing is shown as below. Fo
 
 ![Alt text](figs/methodology_framework.png)
 
-### Place-based social network
+### 1. Place-based social network construction
 
 This module requires the following data:
 - Degree distribution.
@@ -66,7 +66,7 @@ Using the proposed procedure, an example of the generated social network is show
 - South Park.
 <img src="figs/southpark_social_tie_net.png"  width="70%">
 
-### Place-based resource-sharing network
+### 2. Place-based resource-sharing network construction
 
 This module requires the following data:
 - Resource distribution. See [data/laurelhurst_resource_distr_PMF.csv](data/laurelhurst_resource_distr_PMF.csv) and [data/southpark_resource_distr_PMF.csv](data/southpark_resource_distr_PMF.csv).
@@ -75,7 +75,7 @@ This module requires the following data:
 
 For strong ties, the sharing priority is 3; for weak ties, the sharing priority is 2; for strangers, the sharing priority is 1.
 
-### P2P Resource-sharing Model
+### 3. P2P Resource-sharing Model
 
 This module redistribute the surplus resources to the needy households based on the sharing preference and sharing priority. Here blow is an example of the resource-sharing model.
 
@@ -87,7 +87,7 @@ This module redistribute the surplus resources to the needy households based on 
 - After sharing.
 <img src="figs/laurelhurst_transp_resource_redistribution.png"  width="70%">
 
-### Evaluation matrics
+### 4. Resilience loss analysis
 See [evaluation_metrics.py](src/evaluation_metrics.py). This module calculates the resilience loss of the community after the disaster. Here is an example of the evaluation metrics.
 
 <img src="figs/laurelhurst_status_quo_tau_5_water.png"  width="70%">
