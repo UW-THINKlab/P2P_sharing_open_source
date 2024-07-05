@@ -20,8 +20,11 @@ See the `Demo` folder for the demo code and the expected output.
     - `community.py`: The code for generating community-based social networks and P2P resource-sharing networks.
     - `resource_sharing_model.py`: The P2P resource-shairng model.
     - `evaluation_metrics.py`: The evaluation metrics for resilience loss.
-- `results`: The scenario analysis results.
 - `demo`: The demo code and expected output.
+    - `demo.ipynb`: The demo code shows how to use the source code to conduct analysis.
+    - `q_vec`: The resoruce inventory of households before P2P resource sharing.
+    - `v_vec`: The resource demand of households after P2P resource sharing.
+- `results`: The scenario analysis results.
 - `figs`: The figures generated in this project.
 
 ## Framework
