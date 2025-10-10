@@ -1,6 +1,6 @@
 # Peer-to-peer resource sharing
 
-Code for paper "Untapped Capacity of Place-based Peer-to-Peer (P2P) Resource Sharing for Community Resilience" by Zhengyang Li, Katherine Idziorek, Anthony Chen, Cynthia Chen.
+Code for paper "Zhengyang Li, Katherine Idziorek, Anthony Chen, Cynthia Chen. 2025. Untapped capacity of place-based peer-to-peer resource sharing for community resilience. Nature Cities. 2(1), 47-57." [Link](https://www.nature.com/articles/s44284-024-00175-w)
  
 ## Requirements
 - Python 3.x.
@@ -96,4 +96,4 @@ See [evaluation_metrics.py](src/evaluation_metrics.py). This module calculates t
 
 If you find this code useful in your research, please consider citing:
 
-"Untapped Capacity of Place-based Peer-to-Peer (P2P) Resource Sharing for Community Resilience" by Zhengyang Li, Katherine Idziorek, Anthony Chen, Cynthia Chen.
+Zhengyang Li, Katherine Idziorek, Anthony Chen, Cynthia Chen. 2025. Untapped capacity of place-based peer-to-peer resource sharing for community resilience. Nature Cities. 2(1), 47-57.
